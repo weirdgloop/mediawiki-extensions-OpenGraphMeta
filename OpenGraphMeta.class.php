@@ -118,6 +118,8 @@ class OpenGraphMeta {
 		} elseif ( $isMainpage ) {
 			$meta['og:image'] = wfExpandUrl( $wgLogo );
 		}
+		/* WGL - Description2 handles adding the meta description, so no need to add it here.
+		 * Additionally, our Description2 fork adds property="og:description" like this would.
 		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
 			// MW 1.38
 			$description = $parserOutput->getPageProperty( 'description' );
@@ -130,6 +132,7 @@ class OpenGraphMeta {
 		if ( $description !== null ) { // set by Description2 extension, install it if you want proper og:description support
 			$meta['og:description'] = $description;
 		}
+		*/
 		$meta['og:url'] = $title->getFullURL();
 		if ( $egFacebookAppId ) {
 			// fb:app_id needs a prefix property declaring the namespace, so just add it directly
