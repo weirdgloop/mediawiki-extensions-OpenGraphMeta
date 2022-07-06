@@ -135,11 +135,11 @@ class OpenGraphMeta {
 			// fb:app_id needs a prefix property declaring the namespace, so just add it directly
 			$out->addHeadItem(
 				'meta:property:fb:app_id',
-				'	' . Html::element( 'meta', [
+				Html::element( 'meta', [
 					'property' => 'fb:app_id',
 					'content' => $egFacebookAppId,
 					'prefix' => 'fb: http://www.facebook.com/2008/fbml'
-				] ) . "\n"
+				] )
 			);
 		}
 		if ( $egFacebookAdmins ) {
@@ -158,10 +158,10 @@ class OpenGraphMeta {
 			if ( $value ) {
 				$out->addHeadItem(
 					"meta:property:$property",
-					'	' . Html::element( 'meta', [
+					Html::element( 'meta', [
 						'property' => $property,
 						'content' => $value
-					] ) . "\n"
+					] )
 				);
 			}
 		}
